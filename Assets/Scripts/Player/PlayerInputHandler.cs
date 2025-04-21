@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float Horizontal;
+    public float Vertical;
 
-    // Update is called once per frame
+    public bool IsRunning => Input.GetKey(KeyCode.LeftShift);
+    public bool IsJumping => Input.GetKeyDown(KeyCode.Space);
+
     void Update()
     {
-        
+        Horizontal = Input.GetAxisRaw("Horizontal");
+        Vertical = Input.GetAxisRaw("Vertical");
     }
 }
